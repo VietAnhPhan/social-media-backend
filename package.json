@@ -1,7 +1,7 @@
 {
-  "name": "rest-api",
+  "name": "weconnect-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "WeConnect is social media app designed to connect people who share the same interests",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

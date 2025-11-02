@@ -129,10 +129,10 @@ exports.Prisma.UserScalarFieldEnum = {
   isAdmin: 'isAdmin',
   about: 'about',
   phone: 'phone',
-  created_at: 'created_at',
-  isActive: 'isActive',
   avatarPath: 'avatarPath',
-  uuid: 'uuid'
+  uuid: 'uuid',
+  isActive: 'isActive',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.SessionScalarFieldEnum = {
@@ -146,9 +146,9 @@ exports.Prisma.ConversationScalarFieldEnum = {
   id: 'id',
   userIds: 'userIds',
   initiatorId: 'initiatorId',
-  createdAt: 'createdAt',
-  isActive: 'isActive',
   uuid: 'uuid',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
   modifiedAt: 'modifiedAt'
 };
 
@@ -157,20 +157,21 @@ exports.Prisma.MessageScalarFieldEnum = {
   message: 'message',
   conversationId: 'conversationId',
   userId: 'userId',
-  createdAt: 'createdAt',
+  isSeen: 'isSeen',
   isActive: 'isActive',
-  isSeen: 'isSeen'
+  createdAt: 'createdAt',
+  modifiedAt: 'modifiedAt'
 };
 
-exports.Prisma.ChatMemberScalarFieldEnum = {
+exports.Prisma.ParticipantScalarFieldEnum = {
   id: 'id',
   conversationId: 'conversationId',
   userId: 'userId',
-  createdAt: 'createdAt',
-  isActive: 'isActive'
+  isActive: 'isActive',
+  createdAt: 'createdAt'
 };
 
-exports.Prisma.MediaScalarFieldEnum = {
+exports.Prisma.MessageMediaScalarFieldEnum = {
   id: 'id',
   messageId: 'messageId',
   filePath: 'filePath',
@@ -183,9 +184,9 @@ exports.Prisma.FriendRequestScalarFieldEnum = {
   id: 'id',
   senderId: 'senderId',
   receiverId: 'receiverId',
-  createdAt: 'createdAt',
+  status: 'status',
   isActive: 'isActive',
-  status: 'status'
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.FriendScalarFieldEnum = {
@@ -193,8 +194,54 @@ exports.Prisma.FriendScalarFieldEnum = {
   friendId: 'friendId',
   loginuserId: 'loginuserId',
   status: 'status',
+  isActive: 'isActive',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.FollowRequestScalarFieldEnum = {
+  id: 'id',
+  followerId: 'followerId',
+  followeeId: 'followeeId',
+  status: 'status',
+  isActive: 'isActive',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.PostScalarFieldEnum = {
+  id: 'id',
+  body: 'body',
+  authorId: 'authorId',
+  uuid: 'uuid',
+  isActive: 'isActive',
   createdAt: 'createdAt',
-  isActive: 'isActive'
+  modifiedAt: 'modifiedAt'
+};
+
+exports.Prisma.PostMediaScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  filePath: 'filePath',
+  type: 'type',
+  isActive: 'isActive',
+  createdAt: 'createdAt'
+};
+
+exports.Prisma.CommentScalarFieldEnum = {
+  id: 'id',
+  comment: 'comment',
+  postId: 'postId',
+  audienceId: 'audienceId',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  modifiedAt: 'modifiedAt'
+};
+
+exports.Prisma.LikeScalarFieldEnum = {
+  id: 'id',
+  postId: 'postId',
+  audienceId: 'audienceId',
+  isActive: 'isActive',
+  createdAt: 'createdAt'
 };
 
 exports.Prisma.SortOrder = {
@@ -236,10 +283,15 @@ exports.Prisma.ModelName = {
   Session: 'Session',
   Conversation: 'Conversation',
   Message: 'Message',
-  ChatMember: 'ChatMember',
-  Media: 'Media',
+  Participant: 'Participant',
+  MessageMedia: 'MessageMedia',
   FriendRequest: 'FriendRequest',
-  Friend: 'Friend'
+  Friend: 'Friend',
+  FollowRequest: 'FollowRequest',
+  Post: 'Post',
+  PostMedia: 'PostMedia',
+  Comment: 'Comment',
+  Like: 'Like'
 };
 
 /**
