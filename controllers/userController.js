@@ -84,9 +84,9 @@ async function getAll(req, res) {
     where: {
       isActive: true,
     },
-    orderBy: {
-      created_at: "desc",
-    },
+    // orderBy: {
+    //   created_at: "desc",
+    // },
   });
 
   return res.json(users);
