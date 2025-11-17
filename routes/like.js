@@ -18,6 +18,8 @@ const sendValidationResults = (req, res, next) => {
   next();
 };
 
+router.get("/posts/:id", likeController.getLikesByPostId);
+
 router.use(
   "/:id",
   param("id").isNumeric().withMessage("Like Id should be a number"),
@@ -26,7 +28,5 @@ router.use(
 router.post("/", likeController.createLike);
 
 router.delete("/:id", likeController.deleteLike);
-
-router.get("/posts/:id", likeController.getLikesByPostId);
 
 module.exports = router;
