@@ -6,7 +6,7 @@ const postController = require("../controllers/postController");
 
 const router = Router();
 
-router.use(passport.authenticate("jwt", { session: false }));
+router.use(passport.authenticate(["jwt", "github"], { session: false }));
 
 const sendValidationResults = (req, res, next) => {
   const validations = validationResult(req);

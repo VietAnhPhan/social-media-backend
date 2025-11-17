@@ -254,6 +254,14 @@ exports.Prisma.NotificationScalarFieldEnum = {
   createdAt: 'createdAt'
 };
 
+exports.Prisma.OAuthScalarFieldEnum = {
+  profileId: 'profileId',
+  userId: 'userId',
+  provider: 'provider',
+  createdAt: 'createdAt',
+  isActive: 'isActive'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -308,7 +316,8 @@ exports.Prisma.ModelName = {
   PostMedia: 'PostMedia',
   Comment: 'Comment',
   Like: 'Like',
-  Notification: 'Notification'
+  Notification: 'Notification',
+  OAuth: 'OAuth'
 };
 
 /**

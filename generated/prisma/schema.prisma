@@ -42,6 +42,7 @@ model User {
   registeredAt DateTime        @default(now())
   CurrentUser  Notification[]  @relation("CurrentUser")
   OtherUser    Notification[]  @relation("OtherUser")
+  OAuths       OAuth[]
 }
 
 model Session {
@@ -225,4 +226,13 @@ enum notificationType {
   follow
   comment
   like
+}
+
+model OAuth {
+  profileId Int      @id @default(autoincrement())
+  User      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  provider  String
+  createdAt DateTime @default(now())
+  isActive  Boolean  @default(true)
 }
