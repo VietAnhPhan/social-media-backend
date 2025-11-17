@@ -93,13 +93,9 @@ passport.use(
       // return done(err, user);
       // });
       try {
-        const User = await prisma.user.findFirst({
+        const User = await prisma.oAuth.findFirst({
           where: {
-            OAuths: {
-              some: {
-                profileId: profile._json.id,
-              },
-            },
+            profileId: profile._json.id,
           },
         });
 
@@ -119,7 +115,6 @@ passport.use(
         }
 
         return done(null, User);
-
       } catch (err) {
         return done(err);
       }

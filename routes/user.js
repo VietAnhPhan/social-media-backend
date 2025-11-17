@@ -7,7 +7,7 @@ const multer = require("multer");
 
 const router = Router();
 
-router.use(passport.authenticate(["jwt", "github"], { session: false }));
+router.use(passport.authenticate(["jwt"], { session: false }));
 
 const sendValidationResults = (req, res, next) => {
   const validations = validationResult(req);

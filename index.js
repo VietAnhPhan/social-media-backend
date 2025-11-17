@@ -50,7 +50,7 @@ app.use(
   })
 );
 
-app.use("/session", routes.session);
+app.use("/sessions", routes.session);
 app.use("/api/users", routes.user);
 app.use("/api/posts", routes.post);
 app.use("/api/auth", authRoutes);
